@@ -26,6 +26,11 @@
   代码: ("New Computer Modern Mono", "Times New Roman", "SimSun"),
 )
 
+// Typst hard-to-fix bug: https://github.com/typst/typst/issues/311
+#let indent() = {
+  h(2em)
+}
+
 #let article(
   title: "",
   authors: (),
@@ -40,6 +45,7 @@
   set page(paper: "a4", numbering: "1", number-align: center)
   set text(字号.小四, font: 字体.宋体, lang: "zh")
   set heading(numbering: "1.1 ")
+  set par(justify: true, first-line-indent: 2em)
   show heading: it => {
     it
     v(0.5em)
